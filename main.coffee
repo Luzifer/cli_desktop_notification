@@ -53,4 +53,4 @@ repeat = (delay, fkt) ->
   setInterval fkt, delay
 
 repeat settings.query_interval * 1000, query_notifications
-repeat 3600, cleanup_notifications
+repeat 3600000, cleanup_notifications
