@@ -1,8 +1,11 @@
 # luzifer / cli\_desktop\_notification
 
+I wrote this app because I wanted to have my Android notifications displayed in a stream inside a pane of my tmux window covering one of my screens. So I can read notifications without pulling out my phone and still be able to read them even if I am not at my desk when they appear. The browser plugin automatically closes the notifications and they are annoying popups and distract me while working. The output in the terminal just sits there and does not disturb my work.
+
 ## Requirements
 
 - CouchDB with password security
+- [Desktop Notifications](https://play.google.com/store/apps/details?id=org.hcilab.projects.notification) installed on the Android device
 
 ## Deployment
 
