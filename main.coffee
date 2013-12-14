@@ -45,6 +45,7 @@ cleanup_notifications = () ->
   , delete_notifications
 
 delete_notifications = (err, data) ->
+  console.log "Cleanup of #{data.rows.length} entries started..."
   for row in data.rows
     db.removeDoc row.id, row.value._rev
 
