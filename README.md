@@ -1,5 +1,9 @@
 # luzifer / cli\_desktop\_notification
 
+## Requirements
+
+- CouchDB with password security
+
 ## Deployment
 
 1. Clone this repository
