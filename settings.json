@@ -7,5 +7,6 @@
     "pass": ""
   },
   "query_interval": 10,
+  "expires": 86400,
   "code": ""
 }

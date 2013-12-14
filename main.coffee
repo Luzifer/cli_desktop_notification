@@ -36,7 +36,20 @@ process_notifications = (error, response, body) ->
   if my_max_fetched_timestamp > max_fetched_timestamp
     max_fetched_timestamp = my_max_fetched_timestamp
 
+cleanup_notifications = () ->
+  delete_older_than = Math.round((new Date()).getTime() / 1000) - settings.expires - 1
+  console.log delete_older_than
+  db.view 'notifications', 'by_date',
+    "startkey": delete_older_than
+    "descending": true
+  , delete_notifications
+
+delete_notifications = (err, data) ->
+  for row in data.rows
+    db.removeDoc row.id, row.value._rev
+
 repeat = (delay, fkt) ->
   setInterval fkt, delay
 
 repeat settings.query_interval * 1000, query_notifications
+repeat 3600, cleanup_notifications
