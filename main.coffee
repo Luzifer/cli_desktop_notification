@@ -29,7 +29,7 @@ process_notifications = (error, response, body) ->
     if ntime <= max_fetched_timestamp
       continue
     notification.timestamp = Math.round(ntime / 1000)
-    notification.date = dateformat(ntime, 'yyyy-mm-dd hh:MM:ss')
+    notification.date = dateformat(ntime, 'yyyy-mm-dd HH:MM:ss')
     db.saveDoc(notification)
     if ntime > my_max_fetched_timestamp
       my_max_fetched_timestamp = ntime
