@@ -1,0 +1,11 @@
+{
+  "database": {
+    "host": "dbmaster.autodns.kserver.biz",
+    "port": 5984,
+    "name": "",
+    "user": "",
+    "pass": ""
+  },
+  "query_interval": 10,
+  "code": ""
+}
