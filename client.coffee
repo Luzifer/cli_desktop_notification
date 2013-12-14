@@ -2,6 +2,7 @@
 
 request = require 'request'
 couchdb = require 'felix-couchdb'
+colors = require 'colors'
 
 settings = require './settings'
 
@@ -18,7 +19,7 @@ fetch_notifications = () ->
 
 display_notifications = (err, data) ->
   for row in data.rows
-    console.log "#{row.value.date}: #{row.value.title} (#{row.value.appname})\n                     #{row.value.content}"
+    console.log "#{row.value.date}: #{row.value.title} (#{row.value.appname})".bold.grey, "\n                     #{row.value.content}"
     if row.key > max_fetched_timestamp
       max_fetched_timestamp = row.key
 
